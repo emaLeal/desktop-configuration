@@ -23,7 +23,10 @@ def get_widgets():
         widget.Prompt(),
         widget.WindowName(),
         widget.Notify(),
+        widget.CheckUpdates(),
         widget.NetGraph(),
+        widget.Clipboard(),
+        widget.Notify(),
         widget.Chord(
             chords_colors={
                 "launch": (red, white),
@@ -36,12 +39,13 @@ def get_widgets():
             charge_char='',
             discharge_char='',
             empty_char='',
+            full_short_text='',
             low_foreground=red,
             low_percentage=0.2
         ),
         widget.PulseVolume(
             emoji=True,
-            emoji_list=['','']
+            emoji_list=['','','','']
             ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),

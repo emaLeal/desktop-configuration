@@ -73,6 +73,14 @@ screens = get_screen()
 # Drag floating layouts.
 mouse = get_mouse()
 
+wl_input_rules = {
+        "type:touchpad": {
+            "natural_scroll": True,
+            "tap": "enabled",
+            "drag_lock": "enabled"
+            }
+}
+
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
@@ -120,5 +128,5 @@ wmname = "LG3D"
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.call([home])
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
